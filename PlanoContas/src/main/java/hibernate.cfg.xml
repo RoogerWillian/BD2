@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Configurações da conexões -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/db_biblioteca</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1</property>
+
+        <!-- Pool de conexões JDBC -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+        <!--Gerenciamento de sessão -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Desabilitar cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Exibe os comandos SQL -->
+        <property name="show_sql">true</property>
+
+        <!-- Cria as tabelas -->
+        <property name="hbm2ddl.auto">update</property>
+	
+		
+		<mapping class="br.com.biblioteca.domain.Aluno"/>
+		<mapping class="br.com.biblioteca.domain.Autor"/>
+		<mapping class="br.com.biblioteca.domain.Editora"/>
+		<mapping class="br.com.biblioteca.domain.Funcionario"/>
+		<mapping class="br.com.biblioteca.domain.Genero"/>
+		
+		<mapping class="br.com.biblioteca.domain.Autor_Livro"/>
+		<mapping class="br.com.biblioteca.domain.Detalhe_Emprestimo"/>
+		<mapping class="br.com.biblioteca.domain.Emprestimo"/>
+		<mapping class="br.com.biblioteca.domain.Itens"/>
+		<mapping class="br.com.biblioteca.domain.Livro"/>
+		<mapping class="br.com.biblioteca.domain.Tombo"/>
+	
+    </session-factory>
+    
+</hibernate-configuration>
