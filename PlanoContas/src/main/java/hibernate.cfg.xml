@@ -9,9 +9,9 @@
 
         <!-- Configurações da conexões -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/db_biblioteca</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/db_planodecontas</property>
         <property name="connection.username">root</property>
-        <property name="connection.password">1</property>
+        <property name="connection.password">010101</property>
 
         <!-- Pool de conexões JDBC -->
         <property name="connection.pool_size">1</property>
@@ -29,22 +29,12 @@
         <property name="show_sql">true</property>
 
         <!-- Cria as tabelas -->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 	
 		
-		<mapping class="br.com.biblioteca.domain.Aluno"/>
-		<mapping class="br.com.biblioteca.domain.Autor"/>
-		<mapping class="br.com.biblioteca.domain.Editora"/>
-		<mapping class="br.com.biblioteca.domain.Funcionario"/>
-		<mapping class="br.com.biblioteca.domain.Genero"/>
+		<mapping class="br.com.planodecontas.modelo.Conta"/>
+		<mapping class="br.com.planodecontas.modelo.Subconta"/>
 		
-		<mapping class="br.com.biblioteca.domain.Autor_Livro"/>
-		<mapping class="br.com.biblioteca.domain.Detalhe_Emprestimo"/>
-		<mapping class="br.com.biblioteca.domain.Emprestimo"/>
-		<mapping class="br.com.biblioteca.domain.Itens"/>
-		<mapping class="br.com.biblioteca.domain.Livro"/>
-		<mapping class="br.com.biblioteca.domain.Tombo"/>
-	
     </session-factory>
     
 </hibernate-configuration>
